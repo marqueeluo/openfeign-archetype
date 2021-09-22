@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  jackson:
+    default-property-inclusion:  non_null
+    date-format:  yyyy-MM-dd HH:mm:ss
+feign:
+  client:
+#    config:
+#      # 默认配置
+#      default:
+#        # 连接超时（默认10s）
+#        connectTimeout: 5000
+#        # 读取超时（默认60s）
+#        readTimeout: 5000
+#        # 日志级别（NONE | BASIC | HEADERS | FULL）
+#        loggerLevel: BASIC
+    # 注册FeignClient接口
+    registry:
+#      - name: user
+#        target: com.luo.demo.openfeign.server.api.UserApi
+#        url: http://localhost:8080/demo
+#      - name: org
+#        target: com.luo.demo.openfeign.server.api.OrgApi
+#        url: http://localhost:8080/demo
+logging:
+  level:
+    com.luo.demo.openfeign.client.feign: DEBUG
+    com.luo.demo.openfeign.server.api: DEBUG
+
+
